@@ -1,0 +1,3 @@
+﻿l_russian:
+ setting_carn_prostitution_default_religious_doctrine_full_historical: "#high Полностью историческая#!"
+ setting_carn_prostitution_default_religious_doctrine_full_historical_desc: "Все религии имеют точные доктрины относительно $carn_doctrine_prostitution_name$, основанные на исторических исследованиях."

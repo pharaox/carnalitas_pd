@@ -1,0 +1,203 @@
+﻿# Add prostitution doctrines based on historical research.
+# Source: Claude.ai, see README.md for details.
+cpr_seed_historical_prostitution_doctrines_effect = {
+	# Remove existing doctrine
+	if = {
+		limit = { has_doctrine = carn_doctrine_prostitution_crime }
+		remove_doctrine = carn_doctrine_prostitution_crime
+	}
+	else_if = {
+		limit = { has_doctrine = carn_doctrine_prostitution_shunned }
+		remove_doctrine = carn_doctrine_prostitution_shunned
+	}
+	else_if = {
+		limit = { has_doctrine = carn_doctrine_prostitution_accepted }
+		remove_doctrine = carn_doctrine_prostitution_accepted
+	}
+
+	# Add historical doctrine
+	if = {
+		limit = { religion = { is_in_family = rf_abrahamic } }
+		if = {
+			limit = { religion = religion:christianity_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:cathar
+						this = faith:waldensian
+						this = faith:lollard
+						this = faith:bogomilist
+						this = faith:adamites
+						this = faith:insular_celtic
+						this = faith:messalian
+						this = faith:bosnian_church
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_crime
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:dualism_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:manichean
+						this = faith:priscillianism
+						this = faith:sethianism
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_crime
+			}
+			else_if = {
+				limit = { this = faith:cainitism }
+				add_doctrine = carn_doctrine_prostitution_accepted
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:islam_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:masmudi
+						this = faith:qarmatian
+						this = faith:azariqa
+						this = faith:najdat
+						this = faith:sufri
+						this = faith:quranist
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_crime
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:judaism_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:karaism
+						this = faith:samaritan
+						this = faith:merkabah
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_crime
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:yazidi_religion }
+			add_doctrine = carn_doctrine_prostitution_crime
+		}
+		else = {
+			# Fallback, should not happen
+			add_doctrine = carn_doctrine_prostitution_shunned
+		}
+	}
+	else_if = {
+		limit = { religion = { is_in_family = rf_eastern } }
+		if = {
+			limit = { religion = religion:buddhism_religion }
+			if = {
+				limit = { this = faith:vajrayana }
+				add_doctrine = carn_doctrine_prostitution_crime
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:hinduism_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:srikula_shaktism
+						this = faith:kalikula_shaktism
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_accepted
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:jainism_religion }
+			add_doctrine = carn_doctrine_prostitution_crime
+		}
+		else_if = {
+			limit = { religion = religion:taoism_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:zhengyi
+						this = faith:shangqing
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_accepted
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else_if = {
+			limit = { religion = religion:zoroastrianism_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:mazdayasna
+						this = faith:zurvanism
+						this = faith:gayomarthianism
+						this = faith:khurmazta
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_crime
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else = {
+			# Fallback, should not happen
+			add_doctrine = carn_doctrine_prostitution_shunned
+		}
+	}
+	else_if = {
+		limit = { religion = { is_in_family = rf_pagan } }
+		if = {
+			limit = {
+				OR = {
+					religion = religion:akom_religion
+					religion = religion:bon_religion
+					religion = religion:tani_religion
+					religion = religion:hellenism_religion
+					religion = religion:kushitism_religion
+					religion = religion:mundhum_religion
+					religion = religion:north_african_religion
+					religion = religion:waaqism_religion
+					religion = religion:west_african_bori_religion
+					religion = religion:west_african_orisha_religion
+					religion = religion:west_african_roog_religion
+					religion = religion:west_african_religion
+				}
+			}
+			add_doctrine = carn_doctrine_prostitution_accepted
+		}
+		else = {
+			add_doctrine = carn_doctrine_prostitution_shunned
+		}
+	}
+	else = {
+		# Fallback, should not happen
+		add_doctrine = carn_doctrine_prostitution_shunned
+	}
+}
