@@ -12,7 +12,7 @@ This mod requires [Carnalitas](https://www.loverslab.com/files/file/14207-carnal
 
 ## Localization
 
-This mod is currently available in English, French, German, Russian, and Spanish. For other languages, it uses the original English text as a placeholder.
+This mod is currently available in English, French, German, Russian, Spanish, and Korean (translated by [@Xelren](https://www.loverslab.com/profile/4890252-xelren/)). For other languages, it uses the original English text as a placeholder.
 
 ## Links
 
