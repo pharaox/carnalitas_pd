@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.1.2
+
+### Compatibility
+
+* Adapted to CK3 1.17.0 and Carnalitas 2.11.
+
 ## Version 0.1.1
 
 ### Compatibility

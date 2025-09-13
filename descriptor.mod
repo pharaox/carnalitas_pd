@@ -1,6 +1,6 @@
-version="0.1.1"
+version="0.1.2"
 tags={
 	"Religion"
 }
 name="Carnalitas Historical Prostitution Doctrines"
-supported_version="1.16.*"
+supported_version="1.17.*"
