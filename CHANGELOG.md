@@ -6,6 +6,10 @@
 
 * Adapted to CK3 1.17.0 and Carnalitas 2.11.
 
+### Bug Fixes
+
+* Historical prostitution doctrines will no longer overwrite existing doctrines when a new faith is created.
+
 ## Version 0.1.1
 
 ### Compatibility
