@@ -107,13 +107,7 @@ cpr_seed_historical_prostitution_doctrines_effect = {
 		limit = { religion = { is_in_family = rf_eastern } }
 		if = {
 			limit = { religion = religion:buddhism_religion }
-			if = {
-				limit = { this = faith:vajrayana }
-				add_doctrine = carn_doctrine_prostitution_crime
-			}
-			else = {
-				add_doctrine = carn_doctrine_prostitution_shunned
-			}
+			add_doctrine = carn_doctrine_prostitution_shunned
 		}
 		else_if = {
 			limit = { religion = religion:hinduism_religion }
@@ -133,21 +127,6 @@ cpr_seed_historical_prostitution_doctrines_effect = {
 		else_if = {
 			limit = { religion = religion:jainism_religion }
 			add_doctrine = carn_doctrine_prostitution_crime
-		}
-		else_if = {
-			limit = { religion = religion:taoism_religion }
-			if = {
-				limit = {
-					OR = {
-						this = faith:zhengyi
-						this = faith:shangqing
-					}
-				}
-				add_doctrine = carn_doctrine_prostitution_accepted
-			}
-			else = {
-				add_doctrine = carn_doctrine_prostitution_shunned
-			}
 		}
 		else_if = {
 			limit = { religion = religion:zoroastrianism_religion }
@@ -172,17 +151,55 @@ cpr_seed_historical_prostitution_doctrines_effect = {
 		}
 	}
 	else_if = {
+		limit = { religion = { is_in_family = rf_sinitic } }
+		if = {
+			limit = { religion = religion:confucianism_religion }
+			add_doctrine = carn_doctrine_prostitution_shunned
+		}
+		else_if = {
+			limit = { religion = religion:taoism_religion }
+			if = {
+				limit = {
+					OR = {
+						this = faith:zhengyi
+						this = faith:shangqing
+					}
+				}
+				add_doctrine = carn_doctrine_prostitution_accepted
+			}
+			else = {
+				add_doctrine = carn_doctrine_prostitution_shunned
+			}
+		}
+		else = {
+			# Fallback, should not happen
+			add_doctrine = carn_doctrine_prostitution_shunned
+		}
+	}
+	else_if = {
 		limit = { religion = { is_in_family = rf_pagan } }
 		if = {
 			limit = {
 				OR = {
 					religion = religion:akom_religion
+					religion = religion:aluk_religion
+					religion = religion:biliku_religion
+					religion = religion:bimoism_religion
 					religion = religion:bon_religion
+					religion = religion:dayawism_religion
 					religion = religion:tani_religion
+					religion = religion:hantuism_religion
 					religion = religion:hellenism_religion
+					religion = religion:dab_qhuas_religion
+					religion = religion:kaharingan_religion
+					religion = religion:kamuyism_religion
 					religion = religion:kushitism_religion
+					religion = religion:moism_religion
 					religion = religion:mundhum_religion
+					religion = religion:muism_religion
 					religion = religion:north_african_religion
+					religion = religion:satsana_phi_religion
+					religion = religion:shamanism_religion
 					religion = religion:waaqism_religion
 					religion = religion:west_african_bori_religion
 					religion = religion:west_african_orisha_religion
