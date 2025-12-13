@@ -1,3 +1,3 @@
 ﻿l_simp_chinese:
- setting_carn_prostitution_default_religious_doctrine_full_historical: "#high Full Historical#!"
- setting_carn_prostitution_default_religious_doctrine_full_historical_desc: "All faiths have accurate doctrines for $carn_doctrine_prostitution_name$ based on historical research."
+ setting_carn_prostitution_default_religious_doctrine_full_historical: "#high 完全史实#!"
+ setting_carn_prostitution_default_religious_doctrine_full_historical_desc: "所有信仰均拥有准确的关于$carn_doctrine_prostitution_name$教义，皆基于历史研究"
