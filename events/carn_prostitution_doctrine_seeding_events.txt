@@ -9,14 +9,18 @@ carn_prostitution_doctrine_seeding.0001 = {
 			limit = { has_game_rule = carn_prostitution_default_religious_doctrine_full_historical }
 			every_religion_global = {
 				every_faith = {
-					cpr_seed_historical_prostitution_doctrines_effect = yes
+					every_faith_rite = {
+						cpr_seed_historical_prostitution_doctrines_effect = yes
+					}
 				}
 			}
 		}
 		else = {
 			every_religion_global = {
 				every_faith = {
-					carn_seed_prostitution_doctrines_effect = yes
+					every_faith_rite = {
+						carn_seed_prostitution_doctrines_effect = yes
+					}
 				}
 			}
 		}
@@ -24,17 +28,47 @@ carn_prostitution_doctrine_seeding.0001 = {
 }
 
 carn_prostitution_doctrine_seeding.0002 = {
+	scope = faith
 	hidden = yes
 
 	immediate = {
-		root.faith = {
+		root = {
+			every_faith_rite = {
+				if = {
+					limit = {
+						has_game_rule = carn_prostitution_default_religious_doctrine_full_historical
+						NOR = {
+							rite_has_doctrine = carn_doctrine_prostitution_crime
+							rite_has_doctrine = carn_doctrine_prostitution_shunned
+							rite_has_doctrine = carn_doctrine_prostitution_accepted
+						}
+					}
+					cpr_seed_historical_prostitution_doctrines_effect = yes
+				}
+				else = {
+					carn_seed_prostitution_doctrines_effect = yes
+				}
+			}
+		}
+	}
+}
+
+#
+# 0003. Add default prostitution religious doctrines to newly created rites if they don't have them
+#
+
+carn_prostitution_doctrine_seeding.0003 = {
+	hidden = yes
+
+	immediate = {
+		root.rite ?= {
 			if = {
 				limit = {
 					has_game_rule = carn_prostitution_default_religious_doctrine_full_historical
 					NOR = {
-						has_doctrine = carn_doctrine_prostitution_crime
-						has_doctrine = carn_doctrine_prostitution_shunned
-						has_doctrine = carn_doctrine_prostitution_accepted
+						rite_has_doctrine = carn_doctrine_prostitution_crime
+						rite_has_doctrine = carn_doctrine_prostitution_shunned
+						rite_has_doctrine = carn_doctrine_prostitution_accepted
 					}
 				}
 				cpr_seed_historical_prostitution_doctrines_effect = yes
