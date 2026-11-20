@@ -4,7 +4,7 @@
 
 A Carnalitas submod that adds a new setting for the *Default Prostitution Doctrine* game rule: *Full Historical*. This setting seeds all vanilla CK3 faiths with a doctrine corresponding to their historical tolerance of prostitution, as suggested by [Claude.ai](https://claude.ai) and verified by my own research.
 
-The latest version is compatible with CK3 1.20.x and Carnalitas 2.17. If you are still on CK3 1.19.x, download [version 0.3.0](https://github.com/pharaox/carnalitas_pd/releases/download/0.3.0/carnalitas_prostitution_doctrines-0.3.0.zip) instead, and use it with Carnalitas 2.16.
+The latest version is compatible with CK3 1.21.x and Carnalitas 2.19. If you are still on CK3 1.20.x, download [version 0.4.0](https://github.com/pharaox/carnalitas_pd/releases/download/0.4.0/carnalitas_prostitution_doctrines-0.4.0.zip) instead, and use it with Carnalitas 2.18.
 
 ## Compatibility
 
